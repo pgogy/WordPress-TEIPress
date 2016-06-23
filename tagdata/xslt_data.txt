@@ -1,0 +1,16 @@
+apply-templates,empty,
+choose,,
+for-each,,select="input[@name=$name]"
+if,,test="$type='text' or $type='password'"
+otherwise,,
+stylesheet,,
+template,,match="//input"
+variable,empty,name="type" select="@type"
+when,,test="$type='radio'"
+call-template,,name="lib:make-elem"
+import,empty,href="..\Library\FuncLib.xslt"
+output,empty,method="xml" omit-xml-declaration="yes" encoding="UTF-8"
+param,empty,name="elem-name"
+text,,
+value-of,empty,select="$s"
+with-param,empty,name="elem-name" select="'hma:ClaimNumber'"
